@@ -1,0 +1,24 @@
+<!-- <h1>Individual item</h1>
+<p>
+  <mat-form-field appearance="fill">
+    <mat-label>Single item ID</mat-label>
+    <input matInput placeholder="42" #id>
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="displayItem(id.value)">Display item!</button>
+</p>
+<app-content-card [content]="individualDigimon" class="individualDigimon"></app-content-card> -->
+<!-- <br>
+<hr>
+<h1>Content Lists</h1> -->
+<a routerLink="content" routerLinkActive="active-link">Content List</a>
+<br/>
+<a routerLink="content/42" routerLinkActive="active-link">The Answer to the universe and everything</a>
+<br/>
+<a routerLink="pagewillnotbefound" routerLinkActive="active-link">Invalid page Link</a>
+<br/>
+
+<router-outlet></router-outlet>
+
+<!-- <app-content-list></app-content-list>
+
+<app-messages></app-messages> -->

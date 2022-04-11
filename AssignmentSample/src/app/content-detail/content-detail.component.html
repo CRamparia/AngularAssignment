@@ -1,0 +1,9 @@
+<div *ngIf="individualContent" class="digimon-{{individualContent?.id}}">
+    <div class="name">{{individualContent.title}}</div>
+    <div [ngSwitch]='individualContent.type'>
+        <span *ngSwitchCase='"Electric"'>Uses thunder real well</span>
+        <span *ngSwitchCase='"Normal"'>What even is normal?</span>
+        <span *ngSwitchDefault>A typeless pokemon</span>
+    </div>
+    <div class="content-card-image"><img [src]="individualContent.imgURL"></div>
+</div>
