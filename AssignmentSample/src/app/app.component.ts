@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { ApplicationRef, Component, OnInit } from '@angular/core';
+import { SwUpdate } from '@angular/service-worker';
+import { first } from 'rxjs';
 import { Content } from './helper-files/content-interface';
+import { LogUpdateService } from './log-update.service';
 import { DigimonService } from './services/digimon.service';
 import { MessageService } from './services/message.service';
 
@@ -12,13 +15,19 @@ export class AppComponent implements OnInit {
   title = 'AssignmentSample';
   // individualDigimon?: Content;
 
-  constructor(private messageService: MessageService) {
+  constructor(private messageService: MessageService, private logService: LogUpdateService,
+    private appRef: ApplicationRef,
+    private updates: SwUpdate
+    ) {
   }
 
   ngOnInit(): void {
-    // this.digimonService.getContentItem(2).subscribe(
-    //   digimonAtIndex => this.individualDigimon = digimonAtIndex
-    // );
+    this.logService.init();
+
+    const appIsStable$ = this.appRef.isStable.pipe(
+      first(isStable => isStable === true)
+    );
+    
   }
   // displayItem(id: string): void{
   //   if (!parseInt(id)) {
