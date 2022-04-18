@@ -1,0 +1,24 @@
+<div *ngIf="content">
+  <div>{{ content.title }}</div>
+  <div class="creator">{{ content?.creator }}</div>
+  <img *ngIf="content.imgURL" [src]="content?.imgURL" alt="digimon image">
+  <img *ngIf="!content.imgURL" src="https://i.pinimg.com/originals/ca/5b/a7/ca5ba7d121989a03a9e22518a3ccaab1.png"
+    alt="digimon default image">
+  <!-- Default image -->
+  <p class="description">
+    {{ content.description }}
+  </p>
+  <div class="meta-data">
+    <div class="author-info">
+      <span appHoverAffect affect="textDecoration" *ngIf="content.type" class="type">{{ content.type }}</span>
+    </div>
+    <mat-chip-list class="tags" *ngIf="content.tags" aria-label="Types for Digimon">
+      <mat-chip appHoverAffect color="primary" *ngFor="let tag of content.tags">
+        {{ tag }}
+      </mat-chip>
+    </mat-chip-list>
+  </div>
+</div>
+<div>
+  <a mat-raised-button color="primary" routerLink="/list">Go back to the list</a>
+</div>

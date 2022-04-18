@@ -1,0 +1,65 @@
+//:host.is-first{
+//  border: 2px solid #000;
+//}
+:host {
+  display: block;
+  width: 400px;
+  margin: 10px auto;
+  text-align: center;
+
+  & mat-card {
+    border: 1px solid #337d33;
+  }
+
+  &.is-first mat-card {
+    border: 2px solid #000;
+  }
+
+  &.rookie mat-card {
+    background-color: burlywood;
+  }
+
+  &.champion mat-card {
+    background-color: aquamarine;
+  }
+
+  &.no-type mat-card {
+    background-color: peru;
+  }
+
+  &.found mat-card {
+    border-color: #00ff00;
+    border-width: 5px;
+  }
+
+  &.individualDigimon mat-card {
+    box-shadow: 5px 10px #55555588;
+  }
+
+  // img {
+  //   margin: 10px;
+  //   max-width: 350px;
+  // }
+
+  .meta-data {
+    //height: 80px;
+  }
+
+  .author-info {
+    height: 24px;
+  }
+
+  .type {
+    margin: 8px 16px 8px 0;
+  }
+
+  .tags {
+    color: #fff;
+    text-align: center;
+  }
+
+  .tags .mat-chip-list-wrapper {
+    justify-content: center;
+  }
+
+}
